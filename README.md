@@ -185,3 +185,17 @@ Broader prior art includes the important **controlled finite-duration** 2023 dSâ
 A finite-support mixing profile requires external switching work: `Delta E_hot + Delta E_collector = W_switch`, verified to machine precision. For the example reference SdS temperature ratio `kappa_b/kappa_c=2.77135` and a 40-bin half-transmitting Gaussian window, the one-species lattice collector gains `1.3557780` energy units, the switch supplies `0.0378271`, and mutual information with a **chosen** hot-channel Gaussian purifier is `13.0379724` nats. The collector's mean energy is **not** enough to infer its correlations: at equal channel temperature, a uniform rotation gives zero energy transfer and zero work but positive hot-purifier MI.
 
 **Combined local snapshot: 77 tests passed** (previous 60 plus 17 new tests; remote GitHub Actions not separately confirmed). This is a regulated one-shot/time-bin model, not yet a causal continuum defect or a gravitational interface; the ancilla is NOT the black-hole interior. A physical behind-horizon QES, replica saddle comparison and Page-time shift remain unsolved. The result is not claimed as novel fundamental physics.
+
+## Phase 2: causal continuum chiral collector and switching-energy audit (30 October 2026)
+
+**Status:** analytically derived and independently verified *free-field* continuum scattering, **not a gravitationally coupled SdS collector, fine-grained Page transition, QES or novelty claim**.
+
+- [Exact derivations, circle-mode checks, numerical results and missing physics](notes/continuum_collector_phase2_2026-10-30.md)
+- [Continuum finite-duration free-Dirac scattering and independent Fourier sideband solver](src/continuum_collector.py)
+- [Nine analytical and independent spectral tests](tests/test_continuum_collector.py)
+
+For smooth compact-supported mixing `R(theta(u))`, the per-complex-Dirac-chirality thermal current `J_beta=pi/(12 beta^2)` transforms with switching-energy addition `theta_dot^2/(4pi)` in **each** output channel. Total external work is `W=integral theta_dot^2/(2pi) du`, and `Delta E_C=integral sin^2(theta)(J_H-J_C) du+W/2`. We independently recover the result from Fourier-sideband scattering on an antiperiodic circle, correctly treating the Dirac sea (a naively truncated negative-energy band creates fake divergent work).
+
+The thermal ratio `beta_C/beta_H=kappa_b/kappa_c` reproduces Easson's **2D** flux `N*(kappa_b^2-kappa_c^2)/(48pi)`. For a declared time-window example, switching work is about **28.8% of transferred thermal energy**, so a physical gravityâ€“bath interface cannot ignore the external source.
+
+**Full local regression:** 86 tests passed (77 earlier + nine Phase-2 tests). A causal chiral boundary-scattering prescription is not a complete counterpropagating SdS field theory; curved-space contact action, defect Ward stress, gravitational junction, purification, *behind-horizon* island and saddle comparison remain unsolved. Remote GitHub Actions result has not been confirmed.
