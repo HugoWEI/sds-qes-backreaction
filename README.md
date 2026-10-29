@@ -100,3 +100,19 @@ Run `python src/linearized_geometry.py` and `python -m pytest -q` to reproduce a
 A one-sided regular-horizon extrapolation predicts `delta r_b/eta=+2.58385855e-4` for the **chosen** r0=400 integration constant. Direct nonlinear roots of `f0+eta*F1` agree within `8.2e-6` relative error even at eta=1, with smaller errors for smaller eta. See [regression](tests/test_horizon_response.py). This root is not a QES and is not independent of the global mass/gauge matching convention.
 
 **Latest local verification: 17 tests passed.** GitHub Actions has been configured; its remote completion state has not been separately confirmed.
+
+## Update 3: dual horizon-adapted patches and conditional CFT entropy (29 October 2026)
+
+**29 local tests passed**, including exact outgoing-EF metric identities, independent ODE/quadrature, null-coordinate integrability, same-event matching, stationary CFT interval entropy and its first-order finite-difference response.
+
+- [Derivation and limitations](notes/two_patch_entropy_audit.md)
+- [Two-patch solver](src/two_patch.py)
+- [Conditional interval-entropy response](src/interval_entropy.py)
+- [Two-patch tests](tests/test_two_patch.py)
+- [Interval tests](tests/test_interval_entropy.py)
+
+**Results:** Using the same Unruh–de Sitter chiral stress and homogeneous reference normalization, the two EF charts satisfy the first-order overlap identity `F1_+(v,r)=F1_-(v-2rstar(r),r)`. The null-coordinate correction obeys `chi_v=sigma_+-sigma_-`, `chi_r=2sigma_-/f+2F1_+/f^2`; its integrability follows exactly from `T_uu-T_vv=J`. A separately specified two-chiral vacuum yields a **stationary** equal-static-time finite-interval entropy, rather than Easson's growing thermodynamic Page proxy; its first-order geometric response is verified against finite differences.
+
+**Not done:** physical global two-horizon matching, diffeomorphism-invariant radiation algebra and entropy, QES extremization, or a fine-grained Page transition. Novelty is **not established**. None of the test responses should be presented as a physical QES displacement or a Page-time correction.
+
+Run `python src/two_patch.py`, `python src/interval_entropy.py`, and `python -m pytest -q`.
