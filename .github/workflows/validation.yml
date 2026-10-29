@@ -1,0 +1,23 @@
+name: Validate analytic and numerical baselines
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Symbolic and independent numerical checks
+        run: python -m pytest -q
+      - name: Print reproducible numerical baselines
+        run: |
+          python src/baseline.py
+          python src/ef_constraint.py
