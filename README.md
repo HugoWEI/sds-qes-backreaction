@@ -151,3 +151,9 @@ The complete local research snapshot passed **54 tests** including 17 new tests 
 Run `python src/free_dirac_multiinterval.py`, `python src/transparent_bath_benchmark.py`, `python src/bath_trial_extremum.py` and `python -m pytest -q`.
 
 **Next physical requirement:** a genuine gravity–bath interface with conserved stress and specified boundary terms; a globally defined quantum state and purifier; the behind-horizon geometry and replica channel; two-null QES and same-algebra Page-saddle comparison. Only then assess novelty of the *resulting correction*.
+
+## Refreshed literature novelty check — 29 October 2026
+
+[Read focused 2026 novelty audit, primary source comparison, and falsifiable next milestones](notes/novelty_audit_2026-10-29.md).
+
+The original SdS **island** phenomenon, free-fermion multi-interval formula, universal near-horizon QES rule, generic first-order response, and standard EF field constraints are all **known or not yet original**. Easson (2026) explicitly defers full nonequilibrium two-horizon QES extremization. The narrow conditional opportunity is a **physical, UV-controlled, state-specific and finite-cosmological-horizon-dependent QES saddle/transition correction**, or a sharply delimited **obstruction** to that transition due to breakdown of semiclassical control. Prior de Sitter work (Aalsma/Sybesma 2021; Kames-King/Verheijden/Verlinde 2022) found severe backreaction in related collection setups, so this must be confronted and not glossed over. No physical new QES or Page shift is yet established.
