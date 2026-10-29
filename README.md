@@ -199,3 +199,17 @@ For smooth compact-supported mixing `R(theta(u))`, the per-complex-Dirac-chirali
 The thermal ratio `beta_C/beta_H=kappa_b/kappa_c` reproduces Easson's **2D** flux `N*(kappa_b^2-kappa_c^2)/(48pi)`. For a declared time-window example, switching work is about **28.8% of transferred thermal energy**, so a physical gravity–bath interface cannot ignore the external source.
 
 **Full local regression:** 86 tests passed (77 earlier + nine Phase-2 tests). A causal chiral boundary-scattering prescription is not a complete counterpropagating SdS field theory; curved-space contact action, defect Ward stress, gravitational junction, purification, *behind-horizon* island and saddle comparison remain unsolved. Remote GitHub Actions result has not been confirmed.
+
+## Phase 3 — curved SdS contact, three-channel energy Ward and conditional shell (30 October 2026)
+
+**Full extracted local regression: 105 tests passed** (86 earlier + 13 curved-worldtube + 6 distributional/shell tests). The remote Actions result has not been checked.
+
+- [Curved three-channel free-Dirac point contact and Killing/proper energy ledger](src/curved_defect.py)
+- [Switch-work controller and conditional 2D internal-shell jump coefficients](src/defect_junction_constraints.py)
+- [Contact conservation and near-horizon redshift regressions](tests/test_curved_defect.py)
+- [Symbolic and regulated thin-shell/battery tests](tests/test_defect_junction_constraints.py)
+- [Full derivations, numerical ledger, and limitations](notes/curved_defect_phase3_2026-10-30.md)
+
+The independent bath channel is **not** the SdS cosmological incoming channel. With an outgoing BH H, spectator cosmological C, and bath B, the local Killing Ward identity reads `Delta J_patch + Delta J_bath = N*theta_dot²/(2pi)`. A finite controller battery must supply this work, otherwise the prescribed time-dependent contact has an unbalanced localized energy source and cannot by itself be a self-consistent gravitational solution. At `b=500`, thermal collector transfer is `0.0023456323`, switching work `0.0006757117`, collector energy increase `0.0026834881`, patch flux deficit `-0.0020077764`, sum residual ~`1e-19`. These refer to the specified **fixed-background contact**.
+
+For an **internal** timelike shell only, continuous metric and X, no dilaton surface charge, the 2D field equations require `[normal X]=-2G epsilon_shell` and `[extrinsic K]=G epsilon_shell/X`. These conditional equations **cannot** be substituted for the unknown junction to a nongravitating bath. A full covariant boundary/controller action, normal displacement Ward identity, horizon-regular dynamical solution, fine-grained radiation algebra and two-null QES remain unresolved. **No original Page-time correction or SdS QES has been obtained.**
