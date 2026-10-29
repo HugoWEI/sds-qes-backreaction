@@ -163,3 +163,13 @@ The original SdS **island** phenomenon, free-fermion multi-interval formula, uni
 See [targeted literature re-check](notes/formulation_literature_check_2026-10-29.md). The static near-horizon criterion of Yu & Ge (Chinese Phys. C 2025) already covers classical neutral SdS because f''(r)=-4GM/r³-2Lambda/3<0. Ageev et al. (JHEP 2024) explicitly show that formal island existence is different from island **dominance** in de Sitter setups. Akhmedov/Bazarov (PRD 2023) find strong horizon backreaction for certain thermal states; Shi/Turiaci/Wu (JHEP 2026) study smooth evaporating nucleated dS black holes under different state conditions. **We therefore seek a controlled, state-specific phase classification of QES existence, saddle dominance, and semiclassical validity—not merely a yes/no island.**
 
 No such complete classification in Easson's particular time-dependent UdS Polyakov neutral SdS model was located in the targeted search, but originality is **unproven**, and our code still has no physical behind-horizon Page transition.
+
+## Broad literature sweep and Phase-0 necessary-control scan (30 October 2026)
+
+- [Broad novelty and state/collector protocol literature audit](notes/broad_sweep_and_proxy_control_2026-10-30.md)
+- [Exact dimensionless SdS **thermodynamic-proxy** adiabaticity scan](src/proxy_viability.py)
+- [Six new independent/symbolic regression tests](tests/test_proxy_viability.py)
+
+**Complete local test result: 60 passed.** The new scan compares the thermodynamic **proxy** crossover with *necessary only* small instantaneous adiabaticity at **both** horizons, and weak (NG/r_b^2) coupling. In the illustrative (q=NG\Lambda=10^{-6}) scan, all five sampled initial conditions satisfy these necessary checks at the *proxy* crossing. This **does not** establish a physical Page curve or an actual controlled island: full collector backreaction, horizon boundary-layer validity, quantum state, replica channels, and two-null behind-horizon QES remain unsolved.
+
+Broader prior art includes the important **controlled finite-duration** 2023 dS–Rindler collector of Aalsma, Aguilar-Gutierrez and Sybesma. Thus neither generic controlled de Sitter information recovery nor a universal de Sitter no-go is a new claim. A **model-specific finite-\Lambda** QES existence/dominance/control result in Easson's neutral time-dependent UdS background remains a *plausible but unverified* opportunity.
