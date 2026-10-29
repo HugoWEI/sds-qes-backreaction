@@ -60,3 +60,20 @@ def test_equal_temperature_information_with_zero_work():
     assert abs(r['net_external_switch_work'])<1e-12
     assert abs(r['delta_energy_collector'])<1e-12
     assert collector_hot_reference_information(H,H,theta)>1
+
+
+def test_reference_information_stable_with_lattice_size():
+    from finite_collector import detailed_budget
+    values=[]
+    for n in (80,96):
+        h=hopping(n)
+        H=thermal_covariance(h,2.)
+        C=thermal_covariance(h,matching_temperature_ratio())
+        start=(n-40)//2
+        t=switching_profile(n,start,start+40,10,np.pi/4)
+        reg=np.where(t>0)[0]
+        r=detailed_budget(h,H,C,t)
+        mi=collector_hot_reference_information(H,C,t,reg)
+        values.append((r['net_external_switch_work'],
+                       r['delta_energy_collector'],mi))
+    np.testing.assert_allclose(values[0],values[1],rtol=0,atol=1e-9)
