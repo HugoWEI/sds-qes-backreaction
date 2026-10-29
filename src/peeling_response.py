@@ -30,7 +30,8 @@ def analytic_response(T,m=Model()):
     kb,_=m.kappas()
     alpha=alpha_slope(m)
     I0=-np.expm1(-kb*T)/kb
-    I2=quad(lambda x:x*x*np.exp(-kb*x),0,T,epsrel=2e-12)[0]
+    z=kb*T
+    I2=2*(1-np.exp(-z)*(1+z+z*z/2))/kb**3
     return m.c/6*alpha*(T*T/4-I2/(2*I0))
 
 
