@@ -116,3 +116,20 @@ A one-sided regular-horizon extrapolation predicts `delta r_b/eta=+2.58385855e-4
 **Not done:** physical global two-horizon matching, diffeomorphism-invariant radiation algebra and entropy, QES extremization, or a fine-grained Page transition. Novelty is **not established**. None of the test responses should be presented as a physical QES displacement or a Page-time correction.
 
 Run `python src/two_patch.py`, `python src/interval_entropy.py`, and `python -m pytest -q`.
+
+## Update 4: explicit radiation subalgebra, two-null UV negative control and peeling entropy response
+
+**Local validation:** 8 new tests passed in this update. Earlier 29-test result was reported for the preceding research snapshot and has not been rerun here as a full clone; GitHub Actions result is unconfirmed.
+
+- [Detailed scientific audit and derivations](notes/radiation_algebra_and_negative_control.md)
+- [Outgoing chiral subalgebra entropy](src/radiation_algebra.py)
+- [Both-null exterior-interval trial extremization](src/static_patch_candidate.py)
+- [Conditional time-dependent peeling-map entropy response](src/peeling_response.py)
+- [Eight new local independent tests](tests/test_radiation_qes_negative_control.py)
+
+**Conditional numerical results** (`G=1,Lambda=3e-6,M=100,c=12,b=500`):
+- Outgoing chiral late-time entropy rate: `0.0020769186253272033`, distinct from Easson's **thermodynamic proxy** `0.0015999713235596304`. Different entropy observables; no Page-time comparison.
+- Simultaneous two-null stationary point for a one-interval exterior **trial** functional: `a=499.99872675744`, only `0.00127324` from the artificial boundary at `b=500`. Proper separation `0.00215217` is **smaller than cutoff=1**, so this is NOT a controlled island. The parameter-specific scan found no other exterior root.
+- With the separately assumed peeling map `U'(u)=exp[-int_0^u kappa_b(M(s)) ds]`, `M(u)=M0-epsilon J0 u`, `T=20000`, the outgoing **coordinate-cutoff** interval entropy has analytic first-order response `dS/depsilon=0.00177339084435485`. Direct quadrature and an independent ODE agree at `epsilon=1` to numerical precision. This is **not a QES displacement or Page-time shift**.
+
+The missing genuine collector/bath coupling, global quantum state, multi-interval twist correlator and replica channel must be specified before comparing island and no-island branches. **Novelty has not been demonstrated.**
