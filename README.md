@@ -94,3 +94,9 @@ The remaining dilaton equation follows from an independently proven Polyakov str
 **Boundary of validity:** reference gauge/mass constants are not fixed by global boundary data, and the ingoing EF expansion is nonuniform at the cosmological future horizon. A two-patch matched geometry and defined radiation entropy remain outstanding; no physical QES position or fine-grained Page-time shift is claimed. See the derivation note for source normalization and prior-art checks.
 
 Run `python src/linearized_geometry.py` and `python -m pytest -q` to reproduce all 16 local test cases.
+
+### Additional validation: conditional black-hole horizon root
+
+A one-sided regular-horizon extrapolation predicts `delta r_b/eta=+2.58385855e-4` for the **chosen** r0=400 integration constant. Direct nonlinear roots of `f0+eta*F1` agree within `8.2e-6` relative error even at eta=1, with smaller errors for smaller eta. See [regression](tests/test_horizon_response.py). This root is not a QES and is not independent of the global mass/gauge matching convention.
+
+**Latest local verification: 17 tests passed.** GitHub Actions has been configured; its remote completion state has not been separately confirmed.
