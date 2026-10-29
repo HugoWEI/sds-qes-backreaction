@@ -78,3 +78,19 @@ python -m pytest -q
 - Baek & Choi (2023), [JHEP05(2023)098](https://doi.org/10.1007/JHEP05(2023)098): backreacted islands in **JT-like two-dimensional de Sitter**, not full SdS.
 
 **Novelty is not established.** See `notes/model_audit.md` for assumptions and derivations.
+## Update: local first-order EF metric (29 October 2026)
+
+- [Detailed derivation and physical limitations](notes/linearized_solution.md)
+- [First-order anomaly-sourced geometry solver](src/linearized_geometry.py)
+- [Symbolic/independent numerical tests](tests/test_linearized_geometry.py)
+
+The exact metric equations in areal-radius EF gauge yield, at first order on classical SdS:
+```
+sigma1(r)=G*integral_(r0)^r T_rr(s)/s ds
+F1(v,r)=[2G*integral_(r0)^r T_vr(s) ds +2G*J*(v-v0)]/r
+```
+The remaining dilaton equation follows from an independently proven Polyakov stress-conservation identity. At the representative test point (G=1, Lambda=3e-6, M=100, N=12, r0=400, r=500), sigma1=1.8264080066815465e-6 and F1_radial=-3.679751368641078e-7. The first-order tensor field equations agree with the 2D anomaly stress.
+
+**Boundary of validity:** reference gauge/mass constants are not fixed by global boundary data, and the ingoing EF expansion is nonuniform at the cosmological future horizon. A two-patch matched geometry and defined radiation entropy remain outstanding; no physical QES position or fine-grained Page-time shift is claimed. See the derivation note for source normalization and prior-art checks.
+
+Run `python src/linearized_geometry.py` and `python -m pytest -q` to reproduce all 16 local test cases.
