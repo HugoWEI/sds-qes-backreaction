@@ -173,3 +173,15 @@ No such complete classification in Easson's particular time-dependent UdS Polyak
 **Complete local test result: 60 passed.** The new scan compares the thermodynamic **proxy** crossover with *necessary only* small instantaneous adiabaticity at **both** horizons, and weak (NG/r_b^2) coupling. In the illustrative (q=NG\Lambda=10^{-6}) scan, all five sampled initial conditions satisfy these necessary checks at the *proxy* crossing. This **does not** establish a physical Page curve or an actual controlled island: full collector backreaction, horizon boundary-layer validity, quantum state, replica channels, and two-null behind-horizon QES remain unsolved.
 
 Broader prior art includes the important **controlled finite-duration** 2023 dS–Rindler collector of Aalsma, Aguilar-Gutierrez and Sybesma. Thus neither generic controlled de Sitter information recovery nor a universal de Sitter no-go is a new claim. A **model-specific finite-\Lambda** QES existence/dominance/control result in Easson's neutral time-dependent UdS background remains a *plausible but unverified* opportunity.
+
+## Phase 1 — exact finite-window Gaussian collector and purification (30 October 2026)
+
+**Scientific status: physically incomplete collector, NOT a QES or Page curve.** [Detailed model, results, prior art and limitations](notes/finite_collector_phase1_2026-10-30.md).
+
+- [Gaussian free-fermion mixing and exact external-work energy balance](src/finite_collector.py)
+- [Canonical purifier and collector–hot reference mutual information](src/purified_collector.py)
+- [Energy conservation, switching, finite-size, and information tests](tests/test_finite_collector.py) · [purification tests](tests/test_purified_collector.py)
+
+A finite-support mixing profile requires external switching work: `Delta E_hot + Delta E_collector = W_switch`, verified to machine precision. For the example reference SdS temperature ratio `kappa_b/kappa_c=2.77135` and a 40-bin half-transmitting Gaussian window, the one-species lattice collector gains `1.3557780` energy units, the switch supplies `0.0378271`, and mutual information with a **chosen** hot-channel Gaussian purifier is `13.0379724` nats. The collector's mean energy is **not** enough to infer its correlations: at equal channel temperature, a uniform rotation gives zero energy transfer and zero work but positive hot-purifier MI.
+
+**Combined local snapshot: 77 tests passed** (previous 60 plus 17 new tests; remote GitHub Actions not separately confirmed). This is a regulated one-shot/time-bin model, not yet a causal continuum defect or a gravitational interface; the ancilla is NOT the black-hole interior. A physical behind-horizon QES, replica saddle comparison and Page-time shift remain unsolved. The result is not claimed as novel fundamental physics.
