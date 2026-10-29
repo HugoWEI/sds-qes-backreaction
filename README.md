@@ -133,3 +133,21 @@ Run `python src/two_patch.py`, `python src/interval_entropy.py`, and `python -m 
 - With the separately assumed peeling map `U'(u)=exp[-int_0^u kappa_b(M(s)) ds]`, `M(u)=M0-epsilon J0 u`, `T=20000`, the outgoing **coordinate-cutoff** interval entropy has analytic first-order response `dS/depsilon=0.00177339084435485`. Direct quadrature and an independent ODE agree at `epsilon=1` to numerical precision. This is **not a QES displacement or Page-time shift**.
 
 The missing genuine collector/bath coupling, global quantum state, multi-interval twist correlator and replica channel must be specified before comparing island and no-island branches. **Novelty has not been demonstrated.**
+
+## Update 5: targeted novelty audit and exact free Dirac bath benchmark
+
+**Scientific status:** No original SdS QES theorem or physical fine-grained Page-time shift is established. Existing literature has two-horizon SdS islands (2023), frozen SdS future-boundary islands (2022/24), universal evaporating-Unruh QES results (2025), and Polyakov-corrected Schwarzschild Page curves (2026). Easson (2026) explicitly defers the fully backreacted QES, but that alone is not a novelty proof.
+
+- [Prior-art audit, formulas, numerical values and blockers](notes/novelty_and_free_dirac_bath_audit.md)
+- [Exact free Dirac multi-interval and independent lattice correlation matrix](src/free_dirac_multiinterval.py)
+- [Auxiliary nongravitating conformal bath, smoothly matched to static SdS](src/transparent_bath_benchmark.py)
+- [Both-null trial extremization and UV-artifact rejection](src/bath_trial_extremum.py)
+- [Automated free-field, bath and root checks](tests/test_free_dirac_bath.py)
+
+**Reference values** (G=1, Lambda=3e-6, M=100, c=12): free Dirac MI between static intervals [300,350] and [450,500] = 0.5002485802218247; exact two-interval entropy geometric first-order response in the *prescribed* state = 1.7323804001387145e-6 (not an island correction). In the auxiliary bath, MI between gravity [320,400] and bath [20,100] = 0.38294516896267033. The toy two-null extremum a=399.9984084483509 is only 0.00272949 proper units from an artificial endpoint, far **below** the UV cutoff of 1, and is rejected as a non-island artifact.
+
+The complete local research snapshot passed **54 tests** including 17 new tests (7 exact multi-interval, 7 smooth-bath, 3 two-null control). A compact GitHub regression suite is also committed, but its GitHub Actions outcome is not independently verified. The snapshot archive is available as a conversation artifact.
+
+Run `python src/free_dirac_multiinterval.py`, `python src/transparent_bath_benchmark.py`, `python src/bath_trial_extremum.py` and `python -m pytest -q`.
+
+**Next physical requirement:** a genuine gravity–bath interface with conserved stress and specified boundary terms; a globally defined quantum state and purifier; the behind-horizon geometry and replica channel; two-null QES and same-algebra Page-saddle comparison. Only then assess novelty of the *resulting correction*.
