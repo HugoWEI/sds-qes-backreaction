@@ -213,3 +213,18 @@ The thermal ratio `beta_C/beta_H=kappa_b/kappa_c` reproduces Easson's **2D** flu
 The independent bath channel is **not** the SdS cosmological incoming channel. With an outgoing BH H, spectator cosmological C, and bath B, the local Killing Ward identity reads `Delta J_patch + Delta J_bath = N*theta_dot²/(2pi)`. A finite controller battery must supply this work, otherwise the prescribed time-dependent contact has an unbalanced localized energy source and cannot by itself be a self-consistent gravitational solution. At `b=500`, thermal collector transfer is `0.0023456323`, switching work `0.0006757117`, collector energy increase `0.0026834881`, patch flux deficit `-0.0020077764`, sum residual ~`1e-19`. These refer to the specified **fixed-background contact**.
 
 For an **internal** timelike shell only, continuous metric and X, no dilaton surface charge, the 2D field equations require `[normal X]=-2G epsilon_shell` and `[extrinsic K]=G epsilon_shell/X`. These conditional equations **cannot** be substituted for the unknown junction to a nongravitating bath. A full covariant boundary/controller action, normal displacement Ward identity, horizon-regular dynamical solution, fine-grained radiation algebra and two-null QES remain unresolved. **No original Page-time correction or SdS QES has been obtained.**
+
+## Phase 4 — Classical boundary variation and normal-support consistency (30 October 2026)
+
+**Full local regression: 125 tests passed** (105 previous + 20 added). [Phase-4 derivation and prior-art audit](notes/variational_boundary_and_support_phase4_2026-10-30.md).
+
+- [GHY-reduced boundary momenta and SdS Brown–York reference energy](src/boundary_variation.py)
+- [Exact nonlinear classical internal-shell mass and normal-force balance](src/static_shell_support.py)
+- [GHY and boundary regression tests](tests/test_boundary_variation.py)
+- [Symbolic shell-force and binding correction tests](tests/test_static_shell_support.py)
+
+The classical spherical-dilaton action plus X*K GHY term yields radial momenta `Pi_A=(nX-W)/(2G)`, `Pi_X=(nA)/(2G)+A(nX)/(4GX)-AW_X/(2G)`, with finite de Sitter reference W. This gives `dE_BY/dM=1/sqrt(f(b))` at a fixed observation radius. **Dirichlet-fixed lapse and dilaton do not provide free gravitational junction dynamics**: a bath/controller boundary action is necessary.
+
+For a separate **two-sided classical internal shell** (NOT the nongravitating bath), a proper energy m obeys `Delta M=A_in*m-G*m²/(2b)`. The independent dilaton equation demands a radial support/dilaton-charge derivative `m_X=m/(4b²)[1-(1-Lambda b²)/(A_in*A_out)]` in static equilibrium; generally the force is nonzero. At b=500, m=.1, `m_X≈2.8547e-8`; the force-free equilibrium tends to the familiar SdS static radius as m->0. The Phase-3 battery’s bare fixed-background Killing-work ledger has a known **nonlinear gravitational binding correction** of `3.91e-9` in its reference static-shell comparison.
+
+**Not accomplished:** Polyakov quantum boundary charges, an actual gravitating–nongravitating interface, autonomous controller dynamics, global horizon-regular evolved state, physical behind-horizon island, Page curve, or a demonstrated novel theorem. Relevant 2026 prior work: Barenboim–Frolov–Kunstatter, *PRD 114* 024067, derives generalized quantum-corrected Brown–York/Bondi mass in 2D dilaton gravity; this classical calculation is not new.
